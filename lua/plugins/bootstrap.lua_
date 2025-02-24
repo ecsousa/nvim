@@ -1,0 +1,8 @@
+return {
+  "tpope/vim-fugitive",
+  "tpope/vim-unimpaired",
+  "nanotech/jellybeans.vim",
+  "nvim-lualine/lualine.nvim",
+  "ms-jpq/coq_nvim",
+  "nvim-lua/plenary.nvim",
+}
