@@ -19,9 +19,6 @@ end
 require "config.lazy"
 require "config.lualine"
 require "config.options"
-if isModuleAvailable("config.local") then
-  require "config.local"
-end
 require "config.netrw"
 require "config.json"
 require "config.filetypes"
@@ -40,3 +37,6 @@ if vim.fn.has("windows") then
   vim.api.nvim_del_keymap("n", "<C-A>")
 end
 
+if isModuleAvailable("local") then
+  require "local"
+end

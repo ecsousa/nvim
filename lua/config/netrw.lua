@@ -22,13 +22,12 @@ vim.api.nvim_set_keymap("n", "gf", "",
   })
 
 local hcurl = vim.fn.expand("~/bin/hcurl.exe")
-if vim.fn.filereadable(hcurl) then
-    vim.g.netrw_http_cmd = hcurl
-    local curlrc = vim.fn.expand("~/.curlrc")
-    vim.g.netrw_http_xcmd = "-o"
-    if vim.fn.filereadable(curlrc) then
-        vim.g.netrw_http_xcmd = "-K" .. curlrc .. " " .. vim.g.netrw_http_xcmd
-    end
+if vim.fn.filereadable(hcurl) == 1 then
+  vim.g.netrw_http_cmd = hcurl
+  local curlrc = vim.fn.expand("~/.curlrc")
+  vim.g.netrw_http_xcmd = "-o"
+  if vim.fn.filereadable(curlrc) then
+    vim.g.netrw_http_xcmd = "-K" .. curlrc .. " " .. vim.g.netrw_http_xcmd
+  end
 end
-
 
