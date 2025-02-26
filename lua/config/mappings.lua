@@ -12,13 +12,13 @@ local silent = { silent = true }
 
 vnoremap('G', 'G$')
 
-nnoremap('<SPACE>', '<SPACE>:noh<CR>')
-nnoremap('<TAB>n', ':tabnew<CR>')
-nnoremap('<TAB>x', ':tabclose<CR>')
-nnoremap(']<TAB>', ':tabn<CR>')
-nnoremap('[<TAB>', ':tabp<CR>')
-nnoremap('[<S-TAB>', ':tabfirst<CR>')
-nnoremap(']<S-TAB>', ':tablast<CR>')
+nnoremap('<SPACE>', '<SPACE>:noh<CR>', silent)
+nnoremap('<TAB>n', ':tabnew<CR>', silent)
+nnoremap('<TAB>x', ':tabclose<CR>', silent)
+nnoremap(']<TAB>', ':tabn<CR>', silent)
+nnoremap('[<TAB>', ':tabp<CR>', silent)
+nnoremap('[<S-TAB>', ':tabfirst<CR>', silent)
+nnoremap(']<S-TAB>', ':tablast<CR>', silent)
 
 nnoremap('<leader>a', 'ggVG')
 
@@ -26,3 +26,5 @@ xnoremap('>', '>gv', { noremap=true })
 xnoremap('<', '<gv', { noremap=true })
 
 nnoremap('<leader>r', vim.lsp.buf.rename)
+nnoremap('<leader>e', vim.diagnostic.goto_next)
+nnoremap('<leader>E', vim.diagnostic.goto_prev)
