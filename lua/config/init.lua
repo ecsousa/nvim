@@ -33,8 +33,7 @@ end
 vim.cmd [[colo jellybeans]]
 
 if vim.fn.has("windows") then
-  vim.cmd[[source $VIMRUNTIME/mswin.vim]]
-  vim.api.nvim_del_keymap("n", "<C-A>")
+  require "config.windows"
 end
 
 if isModuleAvailable("local") then
