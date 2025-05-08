@@ -21,7 +21,8 @@ vim.api.nvim_set_keymap("n", "gf", "",
     end
   })
 
-local hcurl = vim.fn.expand("~/bin/hcurl.exe")
+local hcurl = (vim.fn.has("win32") == 1) and vim.fn.expand("~/bin/hcurl.exe") or vim.fn.expand("~/bin/hcurl")
+
 if vim.fn.filereadable(hcurl) == 1 then
   vim.g.netrw_http_cmd = hcurl
   local curlrc = vim.fn.expand("~/.curlrc")

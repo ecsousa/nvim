@@ -32,7 +32,7 @@ end
 
 vim.cmd [[colo jellybeans]]
 
-if vim.fn.has("windows") then
+if vim.fn.has("win32") == 1 then
   require "config.windows"
 end
 

@@ -28,3 +28,4 @@ xnoremap('<', '<gv', { noremap=true })
 nnoremap('<leader>r', vim.lsp.buf.rename)
 nnoremap('<leader>e', vim.diagnostic.goto_next)
 nnoremap('<leader>E', vim.diagnostic.goto_prev)
+

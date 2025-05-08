@@ -32,6 +32,7 @@ local tabs = {
   json=2,
   xml=2,
   javascript=2,
+  javascriptreact=2,
   ["javascript.jsx"]=2,
   ["*.json"]=2,
 }
@@ -91,11 +92,11 @@ api.nvim_create_autocmd({"QuickFixCmdPost"}, {
   group = group,
 })
 
-api.nvim_create_autocmd({"FileType"}, {
-  pattern = {"typescript"},
-  command = "syn clear foldBraces",
-  group = group,
-})
+--api.nvim_create_autocmd({"FileType"}, {
+  --pattern = {"typescript"},
+  --command = "syn clear foldBraces",
+  --group = group,
+--})
 
 api.nvim_create_autocmd({"BufReadCmd"}, {
   pattern = {"*.jar","*.xpi","*.docx","*.nupkg"},
