@@ -20,7 +20,7 @@ nnoremap('[<TAB>', ':tabp<CR>', silent)
 nnoremap('[<S-TAB>', ':tabfirst<CR>', silent)
 nnoremap(']<S-TAB>', ':tablast<CR>', silent)
 
-nnoremap('<leader>a', 'ggVG')
+nnoremap('<leader>v', 'ggVG')
 
 xnoremap('>', '>gv', { noremap=true })
 xnoremap('<', '<gv', { noremap=true })
