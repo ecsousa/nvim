@@ -6,6 +6,7 @@ return {
   --"ms-jpq/coq_nvim",
   "nvim-lua/plenary.nvim",
   "github/copilot.vim",
+  "wellle/targets.vim",
 
   {"VonHeikemen/lsp-zero.nvim", branch = 'v3.x'},
   "neovim/nvim-lspconfig",
@@ -43,4 +44,5 @@ return {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
   },
+  "kmonad/kmonad-vim",
 }

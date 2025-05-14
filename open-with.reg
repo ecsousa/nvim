@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\*\shell\OpenWithNeovide]
-@="Open with &Neovide"
+@="Open with Neo&vide"
 "Icon"="\"C:\\Program Files\\Neovide\\neovide.exe\""
 
 [HKEY_CLASSES_ROOT\*\shell\OpenWithNeovide\command]
