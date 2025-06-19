@@ -39,3 +39,13 @@ end
 if isModuleAvailable("local") then
   require "local"
 end
+
+vim.diagnostic.config({
+  virtual_text = true,   -- Show inline diagnostics
+  signs = true,          -- Show signs in the gutter
+  underline = true,      -- Underline the problematic code
+  update_in_insert = false,
+  severity_sort = true,
+})
+
+
