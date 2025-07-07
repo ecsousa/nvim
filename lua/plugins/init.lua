@@ -110,18 +110,30 @@ return {
   },
 
   {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot", -- lazy load on command
+    event = "InsertEnter", -- or VeryLazy, but InsertEnter is a good default
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = false }, -- Avante handles completions, so disable Copilot's inline UI
+        panel = { enabled = false },      -- disable panel too
+      })
+    end,
+  },
+
+  {
     "yetone/avante.nvim",
     event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
     opts = {
       -- add any opts here
       -- for example
+      provider = "copilot",
       providers = {
         copilot = {
-          model = "gpt-40"
+          model = "gpt-4o"
         }
       },
-      --provider = "copilot",
       --openai = {
         --endpoint = "https://api.openai.com/v1",
         --model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
