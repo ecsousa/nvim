@@ -18,7 +18,7 @@ end)
   --}
 --)
 
-require('lspconfig').csharp_ls.setup({ })
+vim.lsp.config('csharp_ls', { })
 
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -26,7 +26,7 @@ require("mason-lspconfig").setup({
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
-      require('lspconfig').lua_ls.setup({
+      vim.lsp.config('lua_ls', {
         settings = {
           Lua = {
             diagnostics = {

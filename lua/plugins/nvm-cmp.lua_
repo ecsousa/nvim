@@ -1,7 +1,6 @@
 local M = {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -68,7 +67,7 @@ M.config = function()
 
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-  require'lspconfig'.lua_ls.setup {
+  vim.lsp.config('lua_ls', {
     capabilities = capabilities,
     settings = {
       Lua = {
@@ -89,12 +88,12 @@ M.config = function()
       }
     }
 
-  }
+  })
 
-  require'lspconfig'.omnisharp.setup {
+  vim.lsp.config('omnisharp', {
     cmd = { vim.fn.expand("~/bin/omnisharp/OmniSharp.exe") },
     capabilities = capabilities,
-  }
+  })
 end
 
 return M

@@ -9,7 +9,6 @@ return {
   "wellle/targets.vim",
 
   {"VonHeikemen/lsp-zero.nvim", branch = 'v3.x'},
-  "neovim/nvim-lspconfig",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
   "L3MON4D3/LuaSnip",
@@ -184,5 +183,32 @@ return {
         ft = { "markdown", "Avante" },
       },
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        ensure_installed = {
+          "lua",
+          "http", -- <- include this
+          -- add any others you need
+        },
+        highlight = {
+          enable = true,
+        },
+      }
+    end,
+  },
+  {
+    "rest-nvim/rest.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function (_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        table.insert(opts.ensure_installed, "http")
+      end,
+    }
   }
 }

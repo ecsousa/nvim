@@ -25,6 +25,7 @@ require "config.filetypes"
 require "config.mappings"
 require "config.mason"
 require "config.telescope"
+require "config.rest"
 
 if vim.g.neovide then
   require "config.neovide"
